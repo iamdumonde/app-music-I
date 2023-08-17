@@ -1,2 +1,33 @@
-<h1>{{titlePage}}</h1>
 <p>albums works!</p>
+<div class="row content">
+    <h1>{{titlePage}}</h1>
+    <div class="col-sm-4 video">
+        <!-- AlbumDetails communication parent vers enfant -->
+        <app-album-details [album]="selectedAlbum"></app-album-details>
+    </div>
+    <div class="col-sm-8 music" *ngIf="albums">
+        <div class="card mb-md-2" *ngFor="let album of albums, let i = index">
+            <div class="card-header">
+                {{ i + 1 }}
+                {{album.ref}}
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{album.title}}</h5>
+                <p class="card-text">{{album.description}}</p>
+                <div *ngIf="album.tags" class="mb-md-2">
+                    <span *ngFor="let tag of album.tags" class="btn btn-outline-secondary me-2">{{ tag }}</span>
+                </div>
+                <a class="btn btn-outline-primary me-2" href="#" role="button">en</a>
+                <a class="btn btn-outline-dark me-2" href="#" role="button">guitar</a>
+                <img *ngIf="album.like" class="glyph-icon me-2" src="../../assets/si-glyph-heart.svg" />
+                <small class="me-2" *ngIf="album.like">{{album.like}}</small>
+                <img *ngIf="album.duration" class="glyph-icon me-2" src="../../assets/si-glyph-timer.svg" />
+                <small *ngIf="album.duration">{{album.duration}}</small>
+
+                <div class="mt-2">
+                    <button class="btn btn-dark" (click)="onSelect(album)">Détails</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

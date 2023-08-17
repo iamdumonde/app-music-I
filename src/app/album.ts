@@ -1,14 +1,14 @@
 export class Album {
     constructor(
-        id: string,
-        ref: string,
-        name: string,
-        title: string,
-        description: string,
-        duration: number,
-        status: string,
-        url?: string,
-        tags?: Array<string>,
-        like?: string
+        public id: string,
+        public ref: string,
+        public name: string,
+        public title: string,
+        public description: string,
+        public duration: number,
+        public status: string,
+        public url?: string,
+        public tags?: Array<string>,
+        public like?: string
     ){}
 }

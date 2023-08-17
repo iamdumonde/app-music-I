@@ -12,7 +12,15 @@ import { ALBUMS } from 'mock-albums';
 export class AlbumsComponent implements OnInit{
   titlePage: string = "Page principale Albums Music";
   albums: Album[] = ALBUMS;
+
+  //variable qui récupère l'album sélectionné pour l'envoyer au component album-details
+  selectedAlbum!: Album;
+
   constructor(){}
 
   ngOnInit(){}
+
+  onSelect(album: Album){
+    this.selectedAlbum = album;
+  }
 }
