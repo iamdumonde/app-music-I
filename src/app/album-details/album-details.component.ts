@@ -15,5 +15,8 @@ export class AlbumDetailsComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.album);//pour l'instant c'est undefined .. C'est normal
   }
-
+  
+  ngOnChanges(){
+    
+  }
 }

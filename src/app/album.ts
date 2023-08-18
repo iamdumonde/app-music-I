@@ -12,3 +12,8 @@ export class Album {
         public like?: string
     ){}
 }
+
+export interface List {
+    id:string,
+    list:Array<string>
+}
